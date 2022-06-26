@@ -66,16 +66,17 @@ export default {
       const web3 = new Web3(window.ethereum);
       const nft = new web3.eth.Contract(
         NFTAbi.abi,
-        '0xb904A7D08a6C3Ba86Fa4860e86F698aC6fdf3396',
+        '0xb904A7D08a6C3Ba86Fa4860e86F698aC6fdf3396'
       );
       const accounts = await web3.eth.getAccounts();
       
       const uri = `https://ipfs.infura.io/ipfs/${result.path}`
+
       // mint nft 
       await nft.methods.mint(uri).send({from: accounts[0]});
       // get tokenId of new nft 
       const id = await nft.methods.tokenCount().call();
-      
+
       console.log("Token id: ", id);
       console.log("Token uri: ", await nft.methods.tokenURI(id).call());
     },
@@ -87,7 +88,8 @@ export default {
         try {
           const result = await client.add(file);
           console.log(result);
-          this.image.value = `https://ipfs.infura.io/ipfs/${result.path}`;
+          this.image.value = `ipfs://${result.path}`;
+
         } catch(e) {
           console.log(e);
         }
