@@ -6,8 +6,9 @@
     "moduleResolution": "node",
     "paths": {
       "@/*": [
-        "src/*"
-      ]
+        "src/*",
+      ],
+      "stream": [ "./node_modules/stream-browserify" ],
     },
     "lib": [
       "esnext",

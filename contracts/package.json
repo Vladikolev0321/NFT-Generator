@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "@openzeppelin/truffle-upgrades": "^1.15.0",
+    "truffle": "^5.5.18"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.6.0",
+    "ipfs-http-client": "^57.0.2"
+  },
+  "name": "contracts",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
